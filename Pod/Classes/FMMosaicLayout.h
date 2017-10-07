@@ -40,6 +40,9 @@ typedef NS_ENUM(NSUInteger, FMMosaicCellSize) {
 - (UIEdgeInsets)collectionView:(UICollectionView *)collectionView layout:(FMMosaicLayout *)collectionViewLayout insetForSectionAtIndex:(NSInteger)section;
 - (CGFloat)collectionView:(UICollectionView *)collectionView layout:(FMMosaicLayout *)collectionViewLayout interitemSpacingForSectionAtIndex:(NSInteger)section;
 
+- (CGFloat)collectionView:(UICollectionView *)collectionView layout:(FMMosaicLayout *)collectionViewLayout
+ heightForItemAtIndexPath:(NSIndexPath *)indexPath;
+
 // Header/Footer
 - (CGFloat)collectionView:(UICollectionView *)collectionView layout:(FMMosaicLayout *)collectionViewLayout
  heightForHeaderInSection:(NSInteger)section;

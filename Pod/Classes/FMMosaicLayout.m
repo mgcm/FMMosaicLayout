@@ -284,7 +284,11 @@ static const BOOL kFMDefaultFooterShouldOverlayContent = NO;
     CGFloat interitemSpacing = [self interitemSpacingAtSection:sectionIndex];
     originX += sectionInset.left;
     originX += column * interitemSpacing;
-    
+
+    if ([self.delegate respondsToSelector:@selector(collectionView:layout:heightForItemAtIndexPath:)]) {
+        cellHeight = [self.delegate collectionView:self.collectionView layout:self heightForItemAtIndexPath:cellIndexPath];
+    }
+
     return CGRectMake(originX, originY, cellWidth, cellHeight);
 }
 
